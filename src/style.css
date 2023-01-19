@@ -16,9 +16,11 @@
 
 #container > * {
   width: 100%;
+  
 }
 
 #container > header {
+  
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +44,7 @@
   border-radius: 0;
 }
 
-#btn_head {
+#btn_head{
   border: 0;
   height: 100%;
 }
@@ -50,20 +52,19 @@
 ::placeholder {
   color: gainsboro;
   font-style: italic;
-  opacity: 1;
+  opacity: 1; 
 }
 
 #btn_clear {
-  border: 0;
-  padding: 15px;
-  color: darkgrey;
-}
-
+    border: 0;
+    padding: 15px;
+    color: darkgrey;
+ }
 /* #taks_list {
   width: 50%;
 } */
 
-.task_description {
+.task_description { 
   margin: 0;
   margin-right: auto;
   padding: 0;
