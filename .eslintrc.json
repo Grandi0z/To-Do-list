@@ -23,11 +23,10 @@
       "build/"
     ],
     "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "./webpack.config.js"
-        }
-      }
+      "import/extensions": [
+        ".js",
+        ".jsx"
+      ]
     }
   }
   
