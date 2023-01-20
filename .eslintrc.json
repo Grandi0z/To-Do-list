@@ -23,8 +23,11 @@
       "build/"
     ],
     "settings": {
-      "import/resolver": ".",
-      "import/extensions": [".js", ".jsx"]
+      "import/resolver": {
+        "node": {
+          "paths": ["."]
+        }
+      }
     }
   }
   
