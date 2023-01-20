@@ -24,7 +24,7 @@
     ],
     "settings": {
       "import/resolver": {
-        "webpack": {
+        "node": {
           "config": "webpack.config.js"
         }
       }
