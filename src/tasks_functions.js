@@ -1,61 +1,45 @@
-import { removeTask, removeCompletedTask } from './task_subfunctions.js';
+import buildList from './task_subfunctions.js';
 
-const populateTasks = (arr) => {
-  const container = document.getElementById('container');
-  const list = document.createElement('ul');
-  const listItem = document.createElement('li');
-  const itemCotent = document.createElement('div');
-  const btnClear = document.createElement('button');
+const removeTask = (description) => {
+  let arr = JSON.parse(localStorage.getItem('tasks'));
+  const newArr = arr.filter((task) => task.description !== description);
+  arr = [...newArr];
 
-  btnClear.setAttribute('type', 'button');
-  btnClear.setAttribute('id', 'btn_clear');
-  btnClear.innerText = 'Clear all completed';
-  list.setAttribute('id', 'taks_list');
-  list.setAttribute('class', 'list-group js-interactive-list');
-  listItem.setAttribute('class', 'list-group-item task_item ');
-  itemCotent.setAttribute('class', 'task_details');
+  //   document.getElementById('taks_list').remove();
+  //   document.getElementById('btn_clear').remove();
+  // buildList(arr);
+  return arr;
+};
 
-  const btnRemoveATask = document.createElement('a');
-  btnRemoveATask.setAttribute('href', '#');
-  btnRemoveATask.setAttribute('class', 'linkM');
+const removeCompletedTask = () => {
+  const arr = JSON.parse(localStorage.getItem('tasks')) || [];
+  // populateTasks(arr)
+  const elt = [];
   if (arr.length) {
     for (let i = 0; i < arr.length; i += 1) {
-      arr[i].index = i;
-      btnRemoveATask.innerHTML = `
-                <i class="bi bi-three-dots-vertical" id="${arr[i].index}"></i>`;
-
-      itemCotent.innerHTML = `
-                  <input type="checkbox" id="check_task_${arr[i].index}" name="check_task" ${arr[i].completed ? 'checked' : ''}>
-                  <p class="task_description checked" id="descrip${arr[i].index}">${arr[i].description}</p>
-                  `;
-
-      itemCotent.appendChild(btnRemoveATask);
-      // append element
-      listItem.appendChild(itemCotent);
-      list.innerHTML += listItem.innerHTML;
+      if (arr[i].completed) {
+        elt.push(removeTask(arr[i].description));
+      }
     }
   }
+  return elt;
+};
 
-  container.appendChild(list);
-  container.appendChild(btnClear);
-
-  for (let i = 0; i < arr.length; i += 1) {
-    const paraDescription = document.getElementById(`descrip${i}`);
-    if (arr[i].completed) {
-      paraDescription.classList.add('checked');
-    } else {
-      paraDescription.classList.remove('checked');
-    }
-  }
+const populateTasks = (arr) => {
+  buildList(arr);
+  const list = document.getElementById('taks_list');
+  const btnClear = document.getElementById('btn_clear');
 
   // remove a task
-  localStorage.setItem('tasks', JSON.stringify(arr));
+  // localStorage.setItem('tasks', JSON.stringify(arr));
   list.addEventListener('click', (e) => {
     if (Number.isInteger(Number(e.target.id))) {
       const index = e.target.id;
       const description = document.getElementById(`descrip${index}`).innerText;
       removeTask(description);
-      populateTasks(arr);
+      document.getElementById('taks_list').remove();
+      document.getElementById('btn_clear').remove();
+      populateTasks(removeTask(description));
     }
   });
   // clear checked
@@ -79,7 +63,10 @@ const populateTasks = (arr) => {
     });
   });
   btnClear.addEventListener('click', () => {
-    removeCompletedTask();
+    // removeCompletedTask();
+    document.getElementById('taks_list').remove();
+    document.getElementById('btn_clear').remove();
+    populateTasks(removeCompletedTask());
   });
 };
 
