@@ -61,8 +61,8 @@ const populateTasks = (arr) => {
   // clear checked
   const listCheckBox = document.querySelectorAll('[type="checkbox"]');
   [].forEach.call(listCheckBox, (checkBox) => {
-    checkBox.addEventListener('click', () => {
-      const checkIndex = this.id;
+    checkBox.addEventListener('click', (e) => {
+      const checkIndex = e.target.id;
       for (let i = 0; i < arr.length; i += 1) {
         if (checkIndex.includes(`${i}`)) {
           if (arr[i].completed) {
