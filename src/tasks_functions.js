@@ -16,23 +16,36 @@ const populateTasks = (arr) => {
     const btnRemoveATask = document.createElement("a")
     btnRemoveATask.setAttribute("href","#")
     btnRemoveATask.setAttribute('class',"linkM")
-    
-    for (let i = 0; i < arr.length; i += 1) {
-        arr[i].index=i
-        btnRemoveATask.innerHTML= `
-            <i class="bi bi-three-dots-vertical" id="${arr[i].index}"></i>`
-        
-        itemCotent.innerHTML = `
-              <input type="checkbox" id="check_task_${arr[i].index}" name="check_task" ${arr[i].completed ? "checked":""}>
-              <p class="task_description" id="descrip${arr[i].index}">${arr[i].description}</p>
-              `;
-      itemCotent.appendChild(btnRemoveATask)
-      // append element
-      listItem.appendChild(itemCotent);
-      list.innerHTML += listItem.innerHTML;
+    if(!(!arr.length)){
+        for (let i = 0; i < arr.length; i += 1) {
+            arr[i].index=i
+            btnRemoveATask.innerHTML= `
+                <i class="bi bi-three-dots-vertical" id="${arr[i].index}"></i>`
+            
+            itemCotent.innerHTML = `
+                  <input type="checkbox" id="check_task_${arr[i].index}" name="check_task" ${arr[i].completed ? "checked":""}>
+                  <p class="task_description checked" id="descrip${arr[i].index}">${arr[i].description}</p>
+                  `;
+            
+            itemCotent.appendChild(btnRemoveATask)
+            // append element
+            listItem.appendChild(itemCotent);
+            list.innerHTML += listItem.innerHTML;
+        }
     }
+    
     container.appendChild(list);
     container.appendChild(btnClear);
+
+    for(let i=0; i<arr.length;i+=1){
+        const paraDescription = document.getElementById(`descrip${i}`)
+        if(arr[i].completed){
+            paraDescription.classList.add('checked')
+        }else {
+            paraDescription.classList.remove('checked')
+        }
+    }
+
     //remove a task
     localStorage.setItem('tasks', JSON.stringify(arr));
     list.addEventListener('click',(e) => {
@@ -49,17 +62,17 @@ const populateTasks = (arr) => {
             for(let i = 0; i<arr.length;i+=1){
                 if(checkIndex.includes(`${i}`)){
                     if(arr[i].completed){
-                        console.log(arr[i].description)
                         arr[i].completed=false
                     }else{
                         arr[i].completed=true
                     }
                     
-                    console.log(arr[i].completed)
                 }
             }
             document.getElementById("taks_list").remove()
             document.getElementById("btn_clear").remove()
+            
+
             populateTasks(arr)
     })})
     btnClear.addEventListener('click',()=> {
