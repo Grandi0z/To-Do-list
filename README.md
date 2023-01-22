@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h1><b>Awesome Books V2</b></h1>
+  <h1><b>To Do list</b></h1>
 
 </div>
 
@@ -10,7 +10,7 @@
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 Awesome Books ](#-awesome-books-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -35,7 +35,7 @@
 
 # 📖 Awesome Books <a name="about-project"></a>
 
-**Awesome Books** is a website to manage books
+**To-Do list** is a simple task manager
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,6 +48,7 @@ The following stacks were used
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
+    <li><a href="https://webpack.js.org/">Webpack</a></li>
   </ul>
 </details>
 
@@ -58,8 +59,9 @@ The following stacks were used
 
 Not yet published
 
-- **Add a book**
-- **Remove a book**
+- **Add task**
+- **Remove task**
+- **Remove completed tasks**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,8 +140,8 @@ You can deploy this project using: GitHub Pages
 > Describe 1 - 3 features you will add to the project.
 
 - [ ] **Awesome Design**
-- [ ] **A table to list the books**
-- [ ] **Use module**
+- [ ] **Data base storage**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,7 +151,7 @@ You can deploy this project using: GitHub Pages
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Grandi0z/Awesome_books_V2/issues).
+Feel free to check the [issues page](https://github.com/Grandi0z/To-Do-list/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
