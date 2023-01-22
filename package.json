@@ -4,10 +4,11 @@
   "description": "",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "start": "webpack serve --open",
     "server": "node server.js",
-    "build": "webpack"
+    "build": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-import": "^2.27.5",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "hint": "^7.1.3",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
@@ -231,7 +233,6 @@
     "get-stream": "^5.2.0",
     "get-symbol-description": "^1.0.0",
     "get-uri": "^3.0.2",
-    "gh-pages": "^5.0.0",
     "glob": "^8.1.0",
     "glob-parent": "^5.1.2",
     "global-dirs": "^3.0.1",
