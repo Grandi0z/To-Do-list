@@ -17,7 +17,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
+  - [🚀 Live Demo https://grandi0z.github.io/To-Do-list](#-live-demo-httpsgrandi0zgithubioto-do-list)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -69,9 +69,9 @@ Not yet published
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo">https://grandi0z.github.io/To-Do-list</a>
 
-Coming soon
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
