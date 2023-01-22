@@ -5,23 +5,13 @@ const removeTask = (description) => {
   const newArr = arr.filter((task) => task.description !== description);
   arr = [...newArr];
 
-  //   document.getElementById('taks_list').remove();
-  //   document.getElementById('btn_clear').remove();
-  // buildList(arr);
   return arr;
 };
 
 const removeCompletedTask = () => {
   const arr = JSON.parse(localStorage.getItem('tasks')) || [];
   // populateTasks(arr)
-  const elt = [];
-  if (arr.length) {
-    for (let i = 0; i < arr.length; i += 1) {
-      if (arr[i].completed) {
-        elt.push(removeTask(arr[i].description));
-      }
-    }
-  }
+  const elt = arr.filter((task) => task.completed !== true);
   return elt;
 };
 
