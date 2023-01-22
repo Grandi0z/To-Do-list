@@ -1,0 +1,84 @@
+.task_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 40px auto;
+  box-shadow: 1px 1px 10px grey;
+  padding: 0;
+}
+
+#container > * {
+  width: 100%;
+}
+
+#container > header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gainsboro;
+}
+
+#container > header > h3 {
+  padding: 10px;
+}
+
+#container div > input {
+  padding: 10px;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+#btn_input {
+  border: 0;
+  border-bottom: 1px solid gainsboro;
+  border-radius: 0;
+}
+
+#btn_head {
+  border: 0;
+  height: 100%;
+}
+
+::placeholder {
+  color: gainsboro;
+  font-style: italic;
+  opacity: 1;
+}
+
+#btn_clear {
+  border: 0;
+  padding: 15px;
+  color: darkgrey;
+}
+
+.task_description {
+  margin: 0;
+  margin-right: auto;
+  padding: 0;
+  padding-left: 8px;
+}
+
+.task_details {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid gainsboro;
+}
+
+a ::before {
+  color: black;
+  text-decoration: none;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: rgb(44, 35, 35);
+  opacity: 60%;
+}
