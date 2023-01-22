@@ -1,8 +1,10 @@
 <a name="readme-top"></a>
 
 <div align="center">
+  <img src="/src/icon/logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
 
-  <h1><b>To Do list</b></h1>
+  <h3><b>To Do list</b></h3>
 
 </div>
 

@@ -1,4 +1,4 @@
-import buildList from './task_subfunctions.js';
+import { buildList, removeCompletedTask } from './task_subfunctions.js';
 
 const removeTask = (description) => {
   let arr = JSON.parse(localStorage.getItem('tasks'));
@@ -6,13 +6,6 @@ const removeTask = (description) => {
   arr = [...newArr];
 
   return arr;
-};
-
-const removeCompletedTask = () => {
-  const arr = JSON.parse(localStorage.getItem('tasks')) || [];
-  // populateTasks(arr)
-  const elt = arr.filter((task) => task.completed !== true);
-  return elt;
 };
 
 const populateTasks = (arr) => {

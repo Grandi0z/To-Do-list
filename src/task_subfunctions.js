@@ -51,4 +51,11 @@ const buildList = (arr) => {
   // clear checked
 };
 
-export { buildList as default };
+const removeCompletedTask = () => {
+  const arr = JSON.parse(localStorage.getItem('tasks')) || [];
+  // populateTasks(arr)
+  const elt = arr.filter((task) => task.completed !== true);
+  return elt;
+};
+
+export { buildList, removeCompletedTask };
